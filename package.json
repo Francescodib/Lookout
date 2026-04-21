@@ -1,0 +1,35 @@
+{
+  "name": "lookout",
+  "version": "1.0.0",
+  "description": "Automated monitor for Italy's Registro Nazionale Aiuti di Stato (RNA) with Telegram notifications",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "lookout": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "check": "tsx src/index.ts check"
+  },
+  "keywords": [
+    "rna",
+    "aiuti-di-stato",
+    "monitoring",
+    "telegram"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.9.0",
+    "dotenv": "^17.4.2",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}

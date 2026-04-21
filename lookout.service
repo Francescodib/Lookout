@@ -1,0 +1,16 @@
+[Unit]
+Description=Lookout - RNA State Aid Monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Lookout
+ExecStart=/usr/bin/node dist/index.js
+Restart=always
+RestartSec=10
+EnvironmentFile=/home/pi/Lookout/.env
+
+[Install]
+WantedBy=multi-user.target
