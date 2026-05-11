@@ -92,6 +92,9 @@ export class RnaClient {
         'X-Requested-With': 'XMLHttpRequest',
         'Origin': 'https://www.rna.gov.it',
         'Referer': 'https://www.rna.gov.it/trasparenza/aiuti',
+        // RNA gates all endpoints behind a cookie-support check; without this
+        // the server returns 302 → /trasparenza/errore-cookies in a loop.
+        'Cookie': 'cookies_consent=true',
       },
       body: body.toString(),
     });
